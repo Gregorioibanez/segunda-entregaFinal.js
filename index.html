@@ -12,20 +12,24 @@
     <title>Estucados y Micropisos</title>
 </head>
 <body>
-    <h1 class="center">Estucados y Micropisos</h1>
+    <h1>Estucados y Micropisos</h1>
     <div>
         <h2>Completa los siguientes datos para cotizar</h2>
-        <label for="estilo">Selecciona el estilo</label>
+        <div class="estilos">
+        <label for="estilo">Selecciona el estilo:</label>
         <select id="estilo">
             <option selected disabled>...</option>
         </select>
+    </div>
+    <div class="metros2">
         <label for="metros2">Ingrese los metros cuadrados:</label>
         <input type="number" id="metros2">
-        <div>
-            <button type="button" class="btn btn-outline-success">Cotizar</button>
+    </div>
+        <div class="btnCotizar">
+            <button type="button" class="btn btn-outline-dark">Cotizar</button>
         </div>
-        <div class="container md">
-            <p class="valor">Valor cotizacion: $ <span>0.00</span><span class="btn" title="Enviar por Email">📧</span></p>
+        <div>
+            <p class="btnEnviar">Valor cotizacion: $ <span>0.00</span><span class="btn" title="Enviar por Email">📧</span></p>
         </div>
     </div>
 </body>

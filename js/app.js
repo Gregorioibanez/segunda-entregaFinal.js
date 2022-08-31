@@ -21,8 +21,9 @@ if (datosCompletos()){
     const cotizacion = new Cotizador(estilo.value, metros2.value)
                 console.log(cotizacion.cotizar())
                 valor.innerText = cotizacion.cotizar()
+    toastSwal("Gracias por elegirnos!", 'info', 'blue')
 } else {
-    alert("⛔️Completa todos los valores solicitados para recibir una cotizacion")
+    toastSwal("Completa todos los valores solicitados para recibir una cotizacion", 'warning', '#FF0000')
 }
 }
 
@@ -36,11 +37,25 @@ const enviarPorEmail = ()=>{
         importe: valor.innerHTML
     }
     localStorage.setItem("UltimaCotizacion", JSON.stringify(enviarCotizacion))
-    alert("Cotizacion enviada, le responderemos a la brevedad!")
+    toastSwal("Cotizacion enviada, le responderemos a la brevedad!", 'success', 'darkgreen' )
 } else {
-    alert("⛔️Completa todos los valores solicitados para recibir una cotizacion")
+    toastSwal("Completa todos los valores solicitados para recibir una cotizacion", 'warning', '#FF0000')
 }
 }
 
 btnCotizar.addEventListener("click", realizarCotizacion)
 btnEnviar.addEventListener("click", enviarPorEmail)
+
+
+const toastSwal = (mensaje, icono, bgcolor)=> {
+    sa.fire({
+        toast: true,
+        position: 'top-end',
+        text: mensaje,
+        icono: icono,
+        showConfirmButton: false,
+        timer: 6000,
+        backgrounf: bgcolor,
+        color: 'white'
+    })
+}
